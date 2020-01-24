@@ -26,7 +26,7 @@ namespace MorePizzaCSharp
 
                 //while (count <= 2)
                 //{
-                    MaxSlice = (int)(MaxLimit * 0.7);
+                    MaxSlice = MaxLimit;
                     //int MaxType = inCond.getMaxAvailableType();
 
                     //Selection of pizza based on maximum number of slice but can not be more slice than required
@@ -40,16 +40,20 @@ namespace MorePizzaCSharp
                             {
                                 selectedPizza.Add(typesDecending[i]);
                                 totalSelectedSlice = typesDecending[i].numberOfSlice;
-                                typesDecending.Remove(typesDecending[i]);
+                                //typesDecending.Remove(typesDecending[i]);
                             }
                         }
+                        //else if(MaxSlice>=MaxLimit*0.8)
+                        //{
+                        //break;
+                        //}
                         else
                         {
                             if (totalSelectedSlice + typesDecending[i].numberOfSlice < MaxSlice)
                             {
                                 selectedPizza.Add(typesDecending[i]);
                                 totalSelectedSlice = totalSelectedSlice + typesDecending[i].numberOfSlice;
-                                typesDecending.Remove(typesDecending[i]);
+                                //typesDecending.Remove(typesDecending[i]);
                             }
                         }
                     }
